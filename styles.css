@@ -1,0 +1,496 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap');
+
+:root {
+    --color-white: #EAE1CF;
+    --color-dark-gray: #34383B;
+    --color-gray: #6A7984;
+    --color-orange: #F17349;
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    border: none;
+    font-family: "Montserrat", Helvetica, Arial, sans-serif;
+    text-decoration: none;
+}
+
+body,
+html {
+    background-color: var(--color-white);
+    overflow-x: hidden;
+    font-size: 16px;
+    color: var(--color-dark-gray);
+    font-weight: 500;
+}
+
+header,
+#top,
+#services,
+#reviews,
+#contact,
+footer {
+    width: 100vw;
+    padding: 0 calc((100vw - 1000px)/2);
+}
+
+#who-are-we,
+#services,
+#reviews,
+#contact {
+    margin-bottom: 75px;
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--color-white);
+    height: 75px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    transition: .5s;
+}
+
+header.shrink {
+    height: 50px;
+}
+
+nav {
+    display: flex;
+    gap: 1rem;
+}
+
+nav a {
+    color: var(--color-dark-gray);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+#header-logo {
+    height: 80%;
+}
+
+#btn-menu {
+    display: none;
+
+    width: 40px;
+    height: 40px;
+    background-color: var(--color-white);
+    position: relative;
+    justify-content: space-evenly;
+    flex-direction: column;
+    align-items: center;
+}
+
+#btn-menu .line {
+    width: 75%;
+    height: 2px;
+    background-color: var(--color-gray);
+    position: relative;
+    transition: .2s;
+}
+
+#btn-menu.active .line:nth-child(1) {
+    transform: translateY(10px) rotate(-45deg);
+}
+
+#btn-menu.active .line:nth-child(2) {
+    width: 0;
+}
+
+#btn-menu.active .line:nth-child(3) {
+    transform: translateY(-10px) rotate(45deg);
+}
+
+#top {
+    height: calc(100vh - 75px);
+    margin-top: 75px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 3rem;
+}
+
+#top-title {
+    font-size: 3rem;
+}
+
+#top-text {
+    max-width: 600px;
+}
+
+#container-top-btns {
+    gap: 2rem;
+    display: flex;
+}
+
+#who-are-we {
+    background-color: var(--color-dark-gray);
+    color: var(--color-white);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 60px 0;
+}
+
+#who-are-we-text {
+    width: 70%;
+}
+
+#who-are-we-cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+}
+
+.who-are-we-card {
+    width: 8rem;
+    height: 8rem;
+    border: solid 0.2rem var(--color-white);
+    border-radius: 0.6rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    font-size: 1rem;
+}
+
+.who-are-we-card svg {
+    max-width: 60%;
+    height: 70%;
+}
+
+#services-cards {
+    display: grid;
+    grid-template-columns: repeat(4, 238px);
+    gap: 1rem;
+    margin: 0 auto;
+    width: max-content;
+}
+
+.service-card {
+    border: solid 1px var(--color-orange);
+    width: 100%;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 1rem;
+}
+
+.service-card img {
+    width: 75%;
+    margin: 0 auto;
+}
+
+.service-card .text {
+    color: var(--color-dark-gray);
+}
+
+.service-card .command {
+    text-decoration: underline;
+    color: var(--color-gray);
+    font-size: 0.85rem;
+    margin-top: 10px;
+}
+
+.service-info,
+.service-value span {
+    font-size: 0.85rem;
+    color: var(--color-gray);
+    line-height: 0;
+}
+
+.service-value {
+    font-size: 1.35rem;
+    color: var(--color-orange);
+    line-height: 0.8;
+    margin-top: 15px;
+}
+
+#reviews-cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: 100%;
+    gap: 1rem;
+}
+
+.review {
+    border: solid 1px var(--color-orange);
+    border-radius: 0.5rem;
+    padding: 1rem;
+}
+
+.review-name {
+    font-size: 1.25rem;
+}
+
+.stars svg {
+    width: 20px;
+    margin-bottom: 1rem;
+}
+
+#contact .text {
+    width: 60%;
+    margin-bottom: 20px;
+}
+
+#contact .btn {
+    width: fit-content;
+}
+
+#contact .btn svg {
+    width: 1.9rem;
+}
+
+footer {
+    background-color: var(--color-dark-gray);
+}
+
+footer .content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+}
+
+footer .content svg {
+    width: 200px;
+}
+
+#social {
+    display: grid;
+    gap: 10px;
+}
+
+#social a {
+    display: flex;
+    gap: 10px;
+}
+
+#social a svg {
+    width: 20px;
+
+}
+
+#social a p {
+    color: var(--color-white);
+}
+
+footer p {
+    color: var(--color-white);
+    margin-top: 10px;
+}
+
+/* hovers */
+:hover {
+    transition: all 0.3s ease;
+}
+
+.service-card:hover,
+.review:hover,
+.who-are-we-card:hover,
+.btn:hover,
+.btn-outline:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    z-index: 0;
+}
+
+/* Componentes reutilizáveis */
+a {
+    cursor: pointer;
+}
+
+.btn,
+.btn-outline {
+    font-size: 1.3rem;
+    font-weight: 500;
+    padding: 10px 30px;
+    border-radius: 5px;
+}
+
+.btn-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.btn-icon svg {
+    width: 1.9rem;
+}
+
+.btn {
+    color: var(--color-white);
+    background-color: var(--color-orange);
+}
+
+.btn-outline {
+    color: var(--color-orange);
+    background-color: transparent;
+    border: solid 0.164rem var(--color-orange);
+}
+
+.title {
+    font-size: 2rem;
+    margin-bottom: 30px;
+}
+
+.text {
+    font-size: 1.125rem;
+}
+
+/* responsividade */
+@media (max-width: 1075px) {
+
+    header,
+    #top,
+    #services,
+    #reviews,
+    #contact,
+    footer {
+        padding: 0 calc((100vw - 750px)/2);
+    }
+
+    #services-cards {
+        grid-template-columns: repeat(3, 239px);
+    }
+
+    #contact .text {
+        width: 75%;
+    }
+}
+
+@media (max-width: 815px) {
+
+    header,
+    #top,
+    #services,
+    #reviews,
+    #contact,
+    footer {
+        padding: 0 calc((100vw - 550px)/2);
+    }
+
+    nav {
+        position: absolute;
+        width: 100%;
+        left: 0;
+        top: 75px;
+        flex-direction: column;
+        align-items: center;
+        gap: 0;
+        background-color: var(--color-white);
+        border-color: var(--color-gray);
+        height: 0;
+        overflow: hidden;
+        transition: 0.3s;
+    }
+
+    header.shrink nav {
+        top: 50px;
+    }
+
+    nav a {
+        margin: 10px 0;
+        color: var(--color-dark-gray);
+    }
+
+    nav.active {
+        height: 154px;
+        border: solid 0px var(--color-gray);
+        border-bottom-width: 0.5px;
+    }
+
+    #btn-menu {
+        display: flex;
+    }
+
+    #container-top-btns {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .text {
+        font-size: 1rem;
+    }
+
+    .title {
+        font-size: 1.5rem;
+        font-weight: bold;
+    }
+
+    #who-are-we-text {
+        width: calc(100% - 2rem);
+    }
+
+    #who-are-we-cards {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+    }
+
+    #services-cards {
+        grid-template-columns: repeat(2, 267px);
+    }
+
+    #contact .text {
+        width: 100%;
+    }
+
+    #top .btn,
+    #top .btn-outline,
+    #contact .btn {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+@media (max-width: 630px) {
+
+    header,
+    #top,
+    #services,
+    #reviews,
+    #contact,
+    footer {
+        padding: 0 1rem;
+    }
+
+    #top-title {
+        font-size: 2.7rem;
+    }
+
+    #services-cards {
+        width: 100%;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .service-card {
+        width: 100%;
+        max-width: 350px;
+        margin: 0 auto;
+    }
+
+    #reviews-cards {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    footer .content {
+        flex-direction: column;
+        align-items: start;
+    }
+
+    #social {
+        margin-top: 30px;
+        gap: 5px;
+    }
+}
